@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+</html>
+   <script>
+    // Import prompt-sync
+
+
+// Array to store tasks
+let tasks = [];
+
+// Function to add a task
+function addTask(task) {
+    tasks.push(task);
+    console.log(`Task added: "${task}"`);
+}
+
+// Function to remove a task by index
+function removeTask(index) {
+    if (index >= 0 && index < tasks.length) {
+        let removed = tasks.splice(index, 1);
+        console.log(`Task removed: "${removed[0]}"`);
+    } else {
+        console.log("Invalid task number!");
+    }
+}
+
+// Function to display all tasks
+function displayTasks() {
+    if (tasks.length === 0) {
+        console.log("No tasks in the list.");
+    } else {
+        console.log("Your Tasks:");
+        for (let i = 0; i < tasks.length; i++) {
+            console.log(`${i}: ${tasks[i]}`);
+        }
+    }
+}
+
+// Function to clear all tasks
+function clearTasks() {
+    tasks = [];
+    console.log("All tasks cleared!");
+}
+
+// Main program loop
+while (true) {
+    console.log("\nCommands: add, remove, view, clear, exit");
+    let command = prompt("Enter a command: ").toLowerCase();
+
+    if (command === "add") {
+        let task = prompt("Enter the task: ");
+        addTask(task);
+    } else if (command === "remove") {
+        let index = parseInt(prompt("Enter the task number to remove: "));
+        removeTask(index);
+    } else if (command === "view") {
+        displayTasks();
+    } else if (command === "clear") {
+        clearTasks();
+    } else if (command === "exit") {
+        console.log("Exiting program. Goodbye!");
+        break;
+    } else {
+        console.log("Invalid command!");
+    }
+}
+
+   </script> 
+</body>
+</html>

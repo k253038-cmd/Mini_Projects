@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> pratice</title>
+    <style>
+        body{
+          background-color: bisque;
+        }
+        #colorbox{
+            padding: 10px 15px;
+             width: 200px;
+             height: 200px;
+             background-color:lightblue;
+             margin: 12px auto;
+             border-radius: 10px;
+     }
+     button{
+        padding: 10px 15px;
+        margin: 20px auto;
+        font-size: 16px;
+        display: block;
+        background-color: blueviolet;
+        border: none;
+        color:white;
+        cursor: pointer;
+        border-radius: 8px;
+     }
+     button :hover{
+        background-color: aquamarine;
+     }
+       
+
+        
+    </style>
+</head>
+<body>
+    <div id="colorbox"></div>
+    <button id="changecolor" >changecolor</button>
+    <script>
+const color = ["red", "green", "yellow", "blue"];
+let index = 0;
+
+document.getElementById("changecolor").addEventListener("click", function() {
+    const box = document.getElementById("colorbox");
+    box.style.backgroundColor = color[index];  // fixed
+    index = (index + 1) % color.length;        // loops back to 0
+});
+
+        
+    </script>
+</body>
+</html>

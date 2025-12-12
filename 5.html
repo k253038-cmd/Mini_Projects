@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>js</title>
+</head>
+<style>
+    h1{
+        text-align: center;
+    }
+    body{
+        background-color: aquamarine;
+    }
+    label{
+        color: black;
+        font-weight: bold;
+        font-size: 18px;
+          margin-right: 10px;
+          text-align: center;
+          margin: auto;
+           display: auto;
+    }
+     button{
+        padding: 10px 15px;
+        width: 100px;
+        border: 1px solid #555;
+        border-radius: 10px;
+        margin: 5px;
+        font-size: 16px;
+        background-color:palevioletred;
+        color: white;
+        cursor: pointer;
+       
+
+
+    }
+   input{
+     padding: 10px 15px;
+        width: 200px;
+        border: 1px solid #555;
+        border-radius: 10px;
+        margin: auto;
+        font-size: 16px;
+        margin: 10px auto;
+   }
+    
+</style>
+<body>
+    <h1>MARKS RECORD</h1>
+    <form  id="marksForm">
+        <label for="Marks" >Marks:</label>
+        <input type="number" id="marks"  placeholder="enter your marks (0-100)"  min="0" max="100" required>
+        <br>
+        <button  type="submit" id="submit">submit:</button>
+    </br>
+    </form>
+    <script>
+    document.getElementById("marksForm").addEventListener("submit", function(e) {
+    e.preventDefault();
+
+    let marks = document.getElementById("marks").value;
+    marks = Number(marks);
+
+    if (marks >= 90 && marks <= 100) {
+        alert("Grade A");
+    }
+    else if (marks >= 75 && marks <= 89) {
+        alert("Grade B");
+    }
+    else if (marks >= 50 && marks <= 74) {
+        alert("Grade C");
+    }
+    else if (marks < 50 && marks >= 0) {
+        alert("Fail");
+    }
+    else {
+        alert("Improve yourself");
+    }
+});
+
+
+    </script>
+     
+    
+</body>
+</html>

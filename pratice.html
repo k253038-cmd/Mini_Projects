@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>web page</title>
+</head>
+<style>
+    .navbar{
+        background-color: #333;
+        padding: 15px;
+        justify-content: center;
+        display: flex;
+        gap: 30px;
+    }
+    .navbar a{
+        background-color: aquamarine;
+        text-decoration: none;
+        padding: 8px 15px;
+     font-size: 18px;
+     transition: 0.8;
+    }
+    body{
+        background-color: antiquewhite;
+    }
+    .navbar :hover{
+        background-color: blueviolet;
+        border-radius: 4px;
+       
+         transform: scale(1.1);
+    }
+</style>
+<body>
+
+  <div class="navbar">
+    <a href="#" onclick="welcomealert()">home</a>
+    <br>
+    <a href="#" >About</a>
+  </br>
+    <a href="#">service</a>
+    <br>
+    <a href="#">contact</a>
+</br>
+  </div>
+  <script>
+    function welcomealert(){
+        alert("welcome to the home");
+    }
+  </script>
+</body>
+</html>

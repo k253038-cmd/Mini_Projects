@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h2>Vehicle Noise Monitoring System Output</h2>
+    <div id="result" ></div>
+    <script>
+   let safe=0;
+   let maintenance=0;
+   let extreme=0;
+   let output="";
+   while(true){
+    let reg=prompt("enter vechile regsitration (end or stop)");
+     if(reg=="end"){
+        break;
+
+    }
+    let noise=number(prompt("enter noise level in decibels (dB)"));
+    let  vectype=prompt("enter vehicle type (heavy/ motorcysle)");
+    let cert=prompt("fitness(yes/no)");
+    let status="";
+    if(noise<=65&&(vectype=="heavy"&& noise<=80)){
+        status="Within Allowed Limit";
+        safe++;
+    }
+     if(cert=="yes"&&(vectype=="motorcysle"&& noise<=75)){
+        status="Needs Maintenance";
+        maintenance++;
+     }else{
+        status="Extreme Noise Violation";
+        extreme++;
+     }
+    
+        output += "<br><strong>===== FINAL SUMMARY =====</strong><br>";
+        output+="within allowed limit:"+safe+"<br>";
+        output+="needs maintenance:"+maintenance+"<br>";
+        output+="extreme noise violation:"+extreme+"<br>";
+        document.getElementById("result").internalHTML=output;
+}
+    </script>
+</body>
+</html>

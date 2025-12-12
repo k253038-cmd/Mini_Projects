@@ -1,0 +1,56 @@
+Sol:
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Food Hygiene Monitoring System</title>
+</head>
+<body>
+    <h2>Food Hygiene Monitoring System Output</h2>
+    <div id="result"></div>
+
+    <script>
+        let safeCount = 0;
+        let reinspectionCount = 0;
+        let violationCount = 0;
+
+        let output = "";  // to store results
+
+        while (true) {
+            let id = prompt("Enter Restaurant ID (or 'end' to stop):");
+
+            if (id === "end") break;
+
+            let bacteria = Number(prompt("Enter Bacterial Count in CFU:"));
+            let type = prompt("Enter Kitchen Type (Open-Kitchen / Closed-Kitchen):");
+            let license = prompt("Valid Hygiene License? (yes/no)");
+
+            let category = "";
+
+            // Safe Food Handling
+            if (bacteria <= 100 || (type === "Open-Kitchen" && bacteria <= 150)) {
+                category = "Safe Food Handling";
+                safeCount++;
+            }
+            // Needs Re-Inspection
+            else if ((license === "yes") || (type === "Closed-Kitchen" && bacteria <= 180)) {
+                category = "Needs Re-Inspection";
+                reinspectionCount++;
+            }
+            // Severe Hygiene Violation
+            else {
+                category = "Severe Hygiene Violation";
+                violationCount++;
+            }
+
+            output += id + " → " + category + "<br>";
+        }
+
+        output += "<br><strong>===== FINAL SUMMARY =====</strong><br>";
+        output += "Safe Food Handling: " + safeCount + "<br>";
+        output += "Needs Re-Inspection: " + reinspectionCount + "<br>";
+        output += "Severe Hygiene Violation: " + violationCount + "<br>";
+
+        document.getElementById("result").innerHTML = output;
+    </script>
+</body>
+</html>

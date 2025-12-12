@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>web page</title>
+</head>
+<style>
+    .blue-box{
+    background-color: blue;
+    margin : 15px auto;
+   width: 200px;
+   height:200px ;
+    }
+    .color-button{
+        color:white;
+        padding: 15px 10px;
+        margin: 15px 10px;
+        padding: 10px 15px;
+        border-radius: 10px;
+        border: none;
+        cursor: pointer;
+
+
+    }
+       .color-button:hover {
+            transform: scale(1.1);
+            opacity: 0.8;
+        }
+     .red { background-color: red; }
+        .green { background-color: green; }
+        .yellow { background-color: yellow; color: black; }
+
+
+
+</style>
+<body>
+      <div class="blue-box" id="box"></div>
+      <div style="text-align: center;"">
+      <button class="color-button red"  onclick="changecolor('red')">red</button> 
+      <button class="color-button green" onclick="changecolor('green')" >green</button>
+      <button  class=" color-button yellow" onclick="changecolor('yellow')"> yellow</button>
+      </div>
+      <script>
+        function changecolor(){
+            const box = document.getElementById('box');
+            box.style.backgroundColor = color;
+
+        }
+      </script>
+    
+</body>
+</html>
